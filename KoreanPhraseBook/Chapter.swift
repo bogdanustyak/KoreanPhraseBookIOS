@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Chapter {
-    let id: String
+class Chapter: BaseModel {
+    
     let name: String
     
     init(id: String, name: String) {
-        self.id = id
         self.name = name
+        super.init(id: id)
     }
 }

@@ -9,11 +9,13 @@
 import Foundation
 
 class Phrase {
+    let id: String
     let word: String
     let translation: String
     let transcription: String
     
-    init(word: String, translation: String, transcription: String){
+    init(id: String, word: String, translation: String, transcription: String){
+        self.id = id
         self.word = word
         self.translation = translation
         self.transcription = transcription

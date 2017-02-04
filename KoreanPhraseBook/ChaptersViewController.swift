@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ChaptersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var chapters = [Chapter]()
     
@@ -23,6 +23,15 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return chapters.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChapterTableViewCell", for: indexPath) as! ChapterTableViewCell
+        cell.initCell(name: chapters[indexPath.row].name)
+        return cell
+    }
 
 }
 

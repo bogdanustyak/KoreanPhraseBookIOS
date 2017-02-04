@@ -22,11 +22,6 @@ class ChapterModel {
     }
     
     private func getFakeChapters() -> [Chapter]{
-        var chapters = [Chapter]()
-        let fakeChapters = FKChapter().getChapters()
-        for fakeChapter in fakeChapters {
-            chapters.append(Chapter(id: fakeChapter.id, name: fakeChapter.name))
-        }
-        return chapters
+        return FakeChaptersAdapter(chapters: FKChapter().getChapters()).transform()
     }
 }
