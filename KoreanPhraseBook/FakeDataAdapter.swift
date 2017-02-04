@@ -9,5 +9,6 @@
 import Foundation
 
 protocol FakeDataAdapter {
-    func transform() -> [Chapter]
+    associatedtype T
+    func transform() -> [T]
 }

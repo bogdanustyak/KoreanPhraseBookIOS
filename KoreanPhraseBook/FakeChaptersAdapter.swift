@@ -9,6 +9,8 @@
 import Foundation
 
 class FakeChaptersAdapter : FakeDataAdapter {
+    typealias T = Chapter
+    
     private let fakeChapters: [FKChapter]
     
     init(chapters: [FKChapter]) {
